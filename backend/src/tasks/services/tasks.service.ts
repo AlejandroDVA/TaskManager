@@ -18,7 +18,7 @@ export class TasksService {
     throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
   }
 
-  findFiltered(id: string, title: string) {
+  findFiltered(id: string, title: string, startDate?: Date, endDate?: Date) {
     const where: any = {};
 
     if (id) {
@@ -26,6 +26,19 @@ export class TasksService {
     }
     if (title) {
       where.title = { [Op.like]: `%${title}%` };
+    }
+    if (startDate && endDate) {
+      where.dueDate = {
+        [Op.between]: [startDate, endDate],
+      };
+    } else if (startDate) {
+      where.dueDate = {
+        [Op.gte]: startDate,
+      };
+    } else if (endDate) {
+      where.dueDate = {
+        [Op.lte]: endDate,
+      };
     }
 
     return this.taskModel.findAll({ where }).catch((error) => this.handleError(error));

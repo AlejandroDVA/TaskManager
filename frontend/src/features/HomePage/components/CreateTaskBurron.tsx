@@ -51,7 +51,7 @@ export const CreateTaskButton: React.FC = () => {
 
   return (
     <div>
-      {/* Botón para abrir el formulario */}
+      {}
       <button
         onClick={() => setShowForm(!showForm)}
         className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
@@ -59,7 +59,7 @@ export const CreateTaskButton: React.FC = () => {
         Create Task
       </button>
 
-      {/* Mostrar el formulario si `showForm` es true */}
+      {}
       {showForm && (
         <form
           onSubmit={formik.handleSubmit}

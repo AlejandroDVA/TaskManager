@@ -119,7 +119,7 @@ export const UpdateTaskForm: React.FC<UpdateTaskFormProps> = ({
         </form>
       </div>
 
-      {/* Delete confirmation modal */}
+      {}
       {showDeleteConfirmation && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded shadow-md w-96">

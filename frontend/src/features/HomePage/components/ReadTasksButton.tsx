@@ -73,7 +73,7 @@ export const ReadTasksButton: React.FC = () => {
         </div>
       )}
 
-      {/* Render the UpdateTaskForm when a task is selected */}
+      {}
       {selectedTask && (
         <UpdateTaskForm
           task={selectedTask}

@@ -9,9 +9,12 @@ export class TasksController {
 
     @Get()
     getAllTasks(@Headers() headers) {
-        const title = headers['title'];
-        const id = headers['id'];
-        return this.tasksService.findFiltered(id, title);
+      const title = headers['title'];
+      const id = headers['id'];
+      const startDate = headers['start-date'] ? new Date(headers['start-date']) : undefined;
+      const endDate = headers['end-date'] ? new Date(headers['end-date']) : undefined;
+    
+      return this.tasksService.findFiltered(id, title, startDate, endDate);
     }
 
     @Post()
