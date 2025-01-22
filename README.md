@@ -72,4 +72,4 @@ Web app CRUD desarrollado en **TypeScript** con **NestJS** y **React**.
     AUTO_LOAD_MODELS=true
     SYNCHRONIZE=true
     
-  DATABASE_HOST se debe mantener una según se la necesidad (Online|Offline)
+  DATABASE_HOST se debe mantener una según sea la necesidad (Online|Offline)
